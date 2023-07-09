@@ -11,7 +11,7 @@ export default function Header() {
   };
 
   return (
-    <div className="flex justify-between items-center p-4 border-b border-gray-900">
+    <div className="flex sticky top-0 z-10 bg-dark justify-between items-center p-4 border-b border-gray-900">
       <div className="flex gap-4 items-center">
         <img src="/images/logo-full.svg" alt="logo" className="w-16 h-16" />
         <h1 className="text-2xl hidden md:block text-primary font-bold uppercase">
