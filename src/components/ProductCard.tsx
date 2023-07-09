@@ -1,7 +1,11 @@
 import { Product } from "@/types/product";
 import Button from "./Button";
+import { useContext } from "react";
+import { CartContext } from "@/contexts/CartContext";
 
 export default function ProductCard({ product }: { product: Product }) {
+  const { addToCart, removeFromCart, inCart } = useContext(CartContext);
+
   return (
     <div className="flex flex-col col-span-1 bg-dark border border-gray-700 rounded-lg">
       <img
@@ -21,7 +25,18 @@ export default function ProductCard({ product }: { product: Product }) {
         </div>
         <div className="flex items-center gap-4 mt-4">
           <Button variant="primary">Buy now</Button>
-          <Button variant="secondary">Add to cart</Button>
+          {inCart(product.id) ? (
+            <Button
+              variant="tertiary"
+              onClick={() => removeFromCart(product.id)}
+            >
+              Remove from cart
+            </Button>
+          ) : (
+            <Button variant="secondary" onClick={() => addToCart(product.id)}>
+              Add to cart
+            </Button>
+          )}
         </div>
       </div>
     </div>

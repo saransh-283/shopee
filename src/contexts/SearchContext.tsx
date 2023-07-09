@@ -1,4 +1,3 @@
-// components/SearchContext.tsx
 import React, { createContext, useState } from 'react';
 
 interface SearchContextProps {
@@ -12,10 +11,10 @@ export const SearchContext = createContext<SearchContextProps>({
 });
 
 export function SearchProvider({ children }:{children:React.ReactNode}) {
-  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [search, setSearch] = useState<string>('');
 
   return (
-    <SearchContext.Provider value={{ search: searchQuery, setSearch: setSearchQuery }}>
+    <SearchContext.Provider value={{ search: search, setSearch: setSearch }}>
       {children}
     </SearchContext.Provider>
   );

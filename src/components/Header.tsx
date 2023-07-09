@@ -1,4 +1,4 @@
-import SearchIcon from "@/icons/SearchIcon";
+import { MagnifyingGlassIcon } from '@heroicons/react/24/solid'
 import Button from "./Button";
 import { useContext } from "react";
 import { SearchContext } from "@/contexts/SearchContext";
@@ -28,7 +28,7 @@ export default function Header() {
         </label>
         <div className="relative">
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-            <SearchIcon />
+            <MagnifyingGlassIcon className='h-5 w-5 text-secondary' />
           </div>
           <input
             type="search"
