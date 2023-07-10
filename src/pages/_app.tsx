@@ -18,7 +18,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <SearchProvider>
         <Head>
           <title>Shopee</title>
-          <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+          <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
         </Head>
         <Header />
         <div className={`${roboto.className} px-8 py-4 text-secondary`}>
